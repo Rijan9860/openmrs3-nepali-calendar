@@ -1,0 +1,95 @@
+@use '@carbon/colors';
+@use '@carbon/styles/scss/spacing';
+@use '@carbon/styles/scss/type';
+@import '~@openmrs/esm-styleguide/src/vars';
+
+.header {
+  @include type.type-style('body-compact-02');
+  color: $text-02;
+  height: spacing.$spacing-12;
+  background-color: $ui-02;
+  border-bottom: 1px solid $ui-03;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-justified-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.right-justified-items {
+  @include type.type-style('body-compact-02');
+  color: $text-02;
+  margin: 0.5rem;
+}
+
+.page-name {
+  @include type.type-style('heading-04');
+}
+
+.page-labels {
+  margin: 1rem 0;
+
+  p:first-of-type {
+    margin-bottom: 0.25rem;
+  }
+}
+
+.date-and-location {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.dropdownContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 0.25rem;
+}
+
+.value {
+  margin-left: 0.25rem;
+}
+
+.middot {
+  margin: 0 0.5rem;
+}
+
+.view {
+  @include type.type-style('label-01');
+}
+
+.datePicker {
+  background-color: transparent;
+  width: 10rem;
+  border: none;
+  & > input {
+    color: colors.$blue-10;
+  }
+}
+
+.dropdown {
+  :global(.cds--list-box__field) {
+    width: 14rem;
+    overflow: hidden;
+  }
+
+  :global(.cds--dropdown--inline .cds--list-box__menu) {
+    left: -4rem;
+  }
+}
+
+// Overriding styles for RTL support
+html[dir='rtl'] {
+  .date-and-location {
+    & > svg {
+      order: -1;
+    }
+    & > span:nth-child(2) {
+      order: -2;
+    }
+  }
+}

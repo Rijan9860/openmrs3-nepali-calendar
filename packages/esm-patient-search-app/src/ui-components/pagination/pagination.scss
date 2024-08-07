@@ -1,0 +1,20 @@
+@import '../../root.scss';
+
+.paginationBar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageNumbers {
+  display: flex;
+}
+
+.paginationButton {
+  box-sizing: border-box;
+}
+
+.activeButton {
+  border-bottom: 0.25rem solid $brand-01;
+}

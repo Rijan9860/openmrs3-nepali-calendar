@@ -1,0 +1,328 @@
+@use '@carbon/styles/scss/spacing';
+@use '@carbon/styles/scss/type';
+@import '~@openmrs/esm-styleguide/src/vars';
+@import '../root.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.encounterHeading {
+  text-align: left;
+  width: 100%;
+  margin: 0 1rem 1.3125rem;
+  color: $ui-05;
+}
+
+.medicationRecord {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .bodyLong01 {
+    margin: 0.25rem 0;
+  }
+}
+
+.medicationContainer {
+  background-color: $ui-01;
+  padding: 1rem;
+  width: 100% !important;
+}
+
+.dosage {
+  @include type.type-style('heading-compact-01');
+}
+
+.metadata {
+  @include type.type-style('label-01');
+  color: $text-02;
+  margin: spacing.$spacing-03 0 spacing.$spacing-05;
+}
+
+.visitsDetailWidgetContainer {
+  background-color: $ui-background;
+  width: 100%;
+  border: 1px solid $ui-03;
+}
+
+.visitsDetailHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: spacing.$spacing-04 0 spacing.$spacing-04 spacing.$spacing-05;
+  background-color: $ui-background;
+}
+
+.visitsDetailHeaderContainer > h4:after {
+  content: '';
+  display: block;
+  width: 2rem;
+  padding-top: 0.188rem;
+  border-bottom: 0.375rem solid $brand-teal-01;
+}
+
+.customTable {
+  th {
+    padding: 0 !important;
+  }
+
+  tr[data-parent-row]:nth-child(odd) td {
+    background-color: $ui-02;
+  }
+
+  tbody tr[data-parent-row]:nth-child(even) td {
+    background-color: $ui-01;
+  }
+
+  td {
+    border-bottom: none !important;
+  }
+}
+
+.visitEmptyState {
+  text-align: center;
+  background-color: white;
+  padding: 2rem;
+  border: 1px solid $ui-03;
+  width: 100%;
+}
+
+.encounterEmptyState {
+  text-align: center;
+  margin: 0 1rem 1rem 1rem;
+}
+
+.expandedRow > td {
+  padding: inherit !important;
+}
+
+.expandedRow > td > div {
+  max-height: max-content !important;
+}
+
+.observation {
+  display: grid;
+  grid-template-columns: max-content auto;
+  grid-gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.observation > span {
+  align-self: center;
+}
+
+.summaryContainer {
+  background-color: $ui-background;
+  display: grid;
+  grid-template-columns: max-content auto;
+  padding: 1rem 0rem;
+  margin: 0 1rem;
+
+  :global(.cds--tabs) {
+    max-height: 7rem;
+  }
+}
+
+.flexSections {
+  display: flex;
+}
+
+.verticalTabs {
+  margin: 1rem 0;
+  scroll-behavior: smooth;
+
+  > ul {
+    flex-direction: column !important;
+  }
+
+  :global(.cds--tabs--scrollable .cds--tabs--scrollable__nav-item + .cds--tabs--scrollable__nav-item) {
+    margin-left: 0rem;
+  }
+
+  :global(.cds--tabs--scrollable .cds--tabs--scrollable__nav-link) {
+    border-bottom: 0 !important;
+    border-left: 2px solid $color-gray-30;
+  }
+}
+
+.tab {
+  outline: 0;
+  outline-offset: 0;
+  min-height: spacing.$spacing-07;
+
+  &:active,
+  &:focus {
+    outline: 2px solid var(--brand-03) !important;
+  }
+
+  &[aria-selected='true'] {
+    border-left: 3px solid var(--brand-03);
+    border-bottom: none;
+    font-weight: 600;
+    margin-left: 0rem !important;
+  }
+
+  &[aria-selected='false'] {
+    border-bottom: none;
+    border-left: 2px solid $ui-03;
+    margin-left: 0rem !important;
+  }
+}
+
+.tablist {
+  :global(.cds--tab--list) {
+    flex-direction: column;
+    max-height: fit-content;
+    overflow-x: visible;
+  }
+
+  > button :global(.cds--tabs .cds--tabs__nav-link) {
+    border-bottom: none;
+  }
+}
+
+.medicationBlock {
+  background-color: $ui-01;
+  padding: 0.625rem 6.75rem 0.75rem 1.063rem;
+  margin-top: 1.5rem;
+  width: 100% !important;
+}
+
+.medicationBlock:first-child {
+  margin-top: 0;
+}
+
+.diagnosisLabel {
+  @include type.type-style('heading-compact-01');
+  color: $text-02;
+  margin-top: 5px;
+}
+
+.diagnosesList {
+  display: flex;
+  flex-flow: row wrap;
+  padding-bottom: 0.5rem;
+  margin: 0 1rem;
+  border-bottom: 1px solid $ui-03;
+}
+
+.actions {
+  margin: 0 1rem;
+}
+
+.contentSwitcher {
+  // TODO: Remove once override gets added to styleguide
+  :global(.cds--content-switcher-btn) {
+    min-width: fit-content;
+  }
+
+  :global(.cds--content-switcher__label) {
+    height: spacing.$spacing-05;
+  }
+}
+
+.notesContainer {
+  margin-bottom: 2rem;
+}
+
+.noteText {
+  background-color: $ui-01;
+  padding: 1rem;
+  width: 100% !important;
+  white-space: pre-wrap;
+}
+
+.desktopHeading,
+.tabletHeading {
+  text-align: left;
+  text-transform: capitalize;
+  margin-bottom: spacing.$spacing-05;
+
+  h4 {
+    @include type.type-style('heading-compact-02');
+    color: $text-02;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 2rem;
+      padding-top: 3px;
+      border-bottom: 0.375rem solid;
+      @include brand-03(border-bottom-color);
+    }
+  }
+}
+
+.tile {
+  text-align: center;
+}
+
+.emptyStateContent {
+  @include type.type-style('heading-compact-01');
+  color: $text-02;
+  margin-top: spacing.$spacing-05;
+  margin-bottom: spacing.$spacing-03;
+}
+
+.emptyStateContainer {
+  background-color: $ui-02;
+  border: 1px solid $ui-03;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 95vw;
+  padding-bottom: 0;
+}
+
+// Overriding styles for RTL support
+html[dir='rtl'] {
+  .visitsDetailHeaderContainer {
+    padding: spacing.$spacing-04 spacing.$spacing-05 spacing.$spacing-04 0;
+    h4 {
+      text-align: right;
+    }
+    & > div {
+      & > div {
+        & :first-child {
+          border-bottom-left-radius: unset;
+          border-top-left-radius: unset;
+          border-bottom-right-radius: spacing.$spacing-02;
+          border-top-right-radius: spacing.$spacing-02;
+        }
+        & :first-child[aria-selected='false'] {
+          border-left: unset;
+          border-right: 0.0625rem solid #a6c8ff;
+        }
+        & :last-child {
+          border-bottom-right-radius: unset;
+          border-top-right-radius: unset;
+          border-bottom-left-radius: spacing.$spacing-02;
+          border-top-left-radius: spacing.$spacing-02;
+        }
+        & :last-child[aria-selected='false'] {
+          border-right: unset;
+          border-left: 0.0625rem solid #a6c8ff;
+        }
+      }
+    }
+  }
+  .summaryContainer {
+    .tablist {
+      & > div {
+        button {
+          text-align: right;
+        }
+        button[aria-selected='true'] {
+          border-left: unset;
+          border-right: 3px solid var(--brand-03);
+        }
+        button[aria-selected='false'] {
+          border-left: unset;
+          border-right: 2px solid #e0e0e0;
+        }
+      }
+    }
+  }
+}

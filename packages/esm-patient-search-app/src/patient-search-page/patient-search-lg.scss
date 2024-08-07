@@ -1,0 +1,96 @@
+@use '@carbon/styles/scss/spacing';
+@use '@carbon/styles/scss/type';
+@import '../root.scss';
+
+.searchResultsDesktop {
+  height: calc(100vh - 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.searchResultsTabletOrOverlay {
+  height: 100%;
+  margin-bottom: spacing.$spacing-09;
+}
+
+.broadBottomMargin {
+  margin-bottom: 5rem;
+}
+
+.resultsHeader {
+  margin: spacing.$spacing-05 0rem spacing.$spacing-03 0rem;
+}
+
+.leftPaddedResultHeader {
+  margin-left: spacing.$spacing-05;
+}
+
+.productiveHeading02 {
+  @include type.type-style('heading-02');
+  align-self: center;
+}
+
+.results {
+  border: 1px solid $ui-03;
+}
+
+.emptySearchResultsTile {
+  text-align: center;
+  margin: 0;
+  padding: spacing.$spacing-08 0;
+}
+
+.paddedEmptySearchResultsTile {
+  margin: 0 spacing.$spacing-05;
+}
+
+.emptyResultText {
+  @include type.type-style('heading-02');
+  color: $text-02;
+  margin-top: spacing.$spacing-03;
+}
+
+.actionText {
+  margin-top: spacing.$spacing-03;
+  @include type.type-style('body-01');
+  color: $text-02;
+  margin: spacing.$spacing-03 auto 0;
+  max-width: 13.75rem;
+  text-align: center;
+}
+
+.spacer {
+  padding: spacing.$spacing-05 0;
+}
+
+.pagination {
+  @extend .spacer;
+  background: $ui-01;
+}
+
+.errorMessage {
+  @include type.type-style('heading-compact-02');
+  margin-top: 2.25rem;
+  margin-bottom: spacing.$spacing-03;
+}
+
+.errorCopy {
+  margin-bottom: spacing.$spacing-03;
+  @include type.type-style('body-01');
+  color: $text-02;
+}
+
+// Refine Search Params
+.advancedSearchPage {
+  width: 100%;
+  display: flex;
+  grid-column-gap: spacing.$spacing-09;
+}
+
+.dobFields {
+  display: flex;
+  input {
+    margin-left: spacing.$spacing-05;
+  }
+}
